@@ -169,8 +169,3 @@ el formulario.
 - Al menos dos materiales seleccionados.
 - Descripcion obligatoria entre 10 y 1000 caracteres.
 - Validaciones en JavaScript y tambien en PHP.
-
-## Entrega
-
-Subir el proyecto completo a GitHub o similar.
-No comprimir el proyecto, segun lo solicitado en la prueba.
