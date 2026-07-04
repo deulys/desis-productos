@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #222;
+    background: #f6f6f6;
+}
+
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+}
+
+.product-card {
+    width: 100%;
+    max-width: 760px;
+    background: #fff;
+    border: 1px solid #9f9f9f;
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+    padding: 44px 36px 38px;
+}
+
+h1 {
+    margin: 0 0 42px;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.full-width {
+    margin-top: 24px;
+}
+
+label,
+legend {
+    font-size: 14px;
+    color: #333;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    border: 1px solid #9d9d9d;
+    border-radius: 3px;
+    padding: 10px 9px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    background-color: #fff;
+}
+
+select {
+    cursor: pointer;
+}
+
+textarea {
+    min-height: 86px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid rgba(26, 171, 138, 0.32);
+    border-color: #1aab8a;
+}
+
+.materials-fieldset {
+    margin: 24px 0 0;
+    padding: 0;
+    border: 0;
+}
+
+.materials-fieldset legend {
+    margin-bottom: 12px;
+}
+
+.materials-fieldset label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 18px;
+    margin-bottom: 8px;
+    gap: 7px;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+button {
+    min-width: 220px;
+    border: 0;
+    border-radius: 4px;
+    padding: 13px 24px;
+    background-color: #1aab8a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.92;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+    .product-card {
+        padding: 32px 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
