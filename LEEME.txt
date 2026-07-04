@@ -13,6 +13,7 @@ VERSIONES USADAS
 - PHP 8.1 o superior
 - PostgreSQL 14 o superior
 - Servidor local: servidor embebido de PHP
+- Docker y Docker Compose opcionalmente, si se quiere levantar todo en contenedores
 
 ESTRUCTURA DEL PROYECTO
 /index.php                         Pantalla principal del formulario
@@ -25,6 +26,28 @@ ESTRUCTURA DEL PROYECTO
 /config/database.php               Conexion PDO a PostgreSQL
 /sql/crear_tablas.sql              Creacion de tablas
 /sql/cargar_datos_iniciales.sql    Datos iniciales para los selects
+/Dockerfile                        Imagen PHP para correr la aplicacion
+/docker-compose.yml                Levanta la aplicacion y PostgreSQL
+
+INSTALACION CON DOCKER
+Esta es la forma mas simple si no quiere instalar PostgreSQL localmente.
+
+1. Levantar los contenedores:
+   docker compose up --build
+
+2. Abrir en el navegador:
+   http://localhost:8080
+
+Docker Compose crea una base PostgreSQL llamada desis_productos y carga los
+archivos de la carpeta sql automaticamente la primera vez que se crea el
+volumen de la base de datos.
+
+La aplicacion queda publicada en el puerto 8080 para no chocar con un PHP local
+que ya este usando el puerto 8000.
+
+Si necesita reiniciar la base de datos desde cero:
+   docker compose down -v
+   docker compose up --build
 
 INSTALACION
 1. Entrar a la carpeta del proyecto:
@@ -97,5 +120,3 @@ VALIDACIONES IMPLEMENTADAS
 - Al menos dos materiales seleccionados.
 - Descripcion obligatoria entre 10 y 1000 caracteres.
 - Validaciones en JavaScript y tambien en PHP.
-
-
